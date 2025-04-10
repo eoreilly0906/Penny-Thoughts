@@ -2,7 +2,7 @@
 An API for a social network that uses a NoSQL Database 
 
 ## How It's Made:
-Using NoSQL databases with MongoDB/Mongooses. Typscript, Javascript, VS Code 
+Using NoSQL databases with MongoDB/Mongoose. Typscript, Javascript, VS Code 
 and Insomnia to test APIs.
 
 ## Link to DEMO
