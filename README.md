@@ -19,13 +19,24 @@ https://github.com/eoreilly0906/Penny-Thoughts
 
 https://www.Google.com
 
+https://www.npmjs.com/package/express
 
+https://www.npmjs.com/package/mongoose
 
+https://stackoverflow.com/questions/tagged/mongoose
+
+https://mongoosejs.com/docs/models.html
+
+https://mongoosejs.com/docs/models.html#querying
+
+https://mongoosejs.com/docs/models.html#deleting
+
+https://mongoosejs.com/docs/models.html#updating
 
 ## Screenshots of app
 
 ### GET Users
-<img src="" />
+<img src="assets/GET USERS.png" />
 
 ### GET Thoughts/Reactions
 <img src="" />
