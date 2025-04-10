@@ -38,7 +38,7 @@ const reactionSchema = new Schema<IReaction>(
   {
     toJSON: {
       getters: true,
-      transform: function(doc, ret) {
+      transform: function(_doc, ret) {
         if (ret.createdAt) {
           ret.createdAt = ret.createdAt.toLocaleDateString();
         }
@@ -71,7 +71,7 @@ const thoughtSchema = new Schema<IThought>(
     toJSON: {
       virtuals: true,
       getters: true,
-      transform: function(doc, ret) {
+      transform: function(_doc, ret) {
         if (ret.createdAt) {
           ret.createdAt = ret.createdAt.toLocaleDateString();
         }
