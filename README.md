@@ -5,11 +5,13 @@ An API for a social network that uses a NoSQL Database
 Using NoSQL databases with MongoDB/Mongooses. Typscript, Javascript, VS Code 
 and Insomnia to test APIs.
 
+## Link to DEMO
+
+https://drive.google.com/file/d/11S75gjVn52LuHoCdLh6yyNOg3Qky7wm_/view
 
 ## About the project
 
-
-
+This project uses a NoSQL database to bring a social media platform to life.
 
 **Github:** 
 
@@ -39,22 +41,22 @@ https://mongoosejs.com/docs/models.html#updating
 <img src="assets/GET USERS.png" />
 
 ### GET Thoughts/Reactions
-<img src="" />
+<img src="assets/GET THOUGHTS:REACTIONS.png" />
 
 ### POST Users
-<img src="" />
+<img src="assets/POST USER.png" />
 
 ### POST Thoughts/Reactions
-<img src="" />
+<img src="assets/PUT THOUGHTS.png" />
 
 ### PUT Users
-<img src="" />
+<img src="assets/PUT USERS.png" />
 
 ### PUT Thoughts/Reactions
-<img src="" />
+<img src="assets/PUT THOUGHTS.png" />
 
 ### DELETE Users
-<img src="" />
+<img src="assets/DELETE USERS.png" />
 
 ### DELETE Thoughts/Reactions
-<img src="" />
+<img src="assets/DELETE THOUGHTS.png" />
