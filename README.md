@@ -29,3 +29,21 @@ https://www.Google.com
 
 ### GET Thoughts/Reactions
 <img src="" />
+
+### POST Users
+<img src="" />
+
+### POST Thoughts/Reactions
+<img src="" />
+
+### PUT Users
+<img src="" />
+
+### PUT Thoughts/Reactions
+<img src="" />
+
+### DELETE Users
+<img src="" />
+
+### DELETE Thoughts/Reactions
+<img src="" />
