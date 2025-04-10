@@ -1,7 +1,7 @@
 import express from 'express';
 import { Types } from 'mongoose';
-import User from '../../models/User.js';
-import Thought from '../../models/Thought.js';
+import User from '../models/User.js';
+import Thought from '../models/Thought.js';
 
 const router = express.Router();
 
