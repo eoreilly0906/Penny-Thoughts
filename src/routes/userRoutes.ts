@@ -1,12 +1,11 @@
-import express from 'express';
-import { Types } from 'mongoose';
+import express, { Request, Response } from 'express';
 import User from '../models/User.js';
 import Thought from '../models/Thought.js';
 
 const router = express.Router();
 
 // GET all users
-router.get('/', async (req, res) => {
+router.get('/', async (_req: Request, res: Response): Promise<void> => {
   try {
     const users = await User.find()
       .select('-__v')
@@ -19,7 +18,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET a single user by _id
-router.get('/:userId', async (req, res) => {
+router.get('/:userId', async (req: Request, res: Response): Promise<void> => {
   try {
     const user = await User.findOne({ _id: req.params.userId })
       .select('-__v')
@@ -27,7 +26,8 @@ router.get('/:userId', async (req, res) => {
       .populate('friends');
     
     if (!user) {
-      return res.status(404).json({ message: 'No user found with this id!' });
+      res.status(404).json({ message: 'No user found with this id!' });
+      return;
     }
     res.json(user);
   } catch (err) {
@@ -36,7 +36,7 @@ router.get('/:userId', async (req, res) => {
 });
 
 // POST a new user
-router.post('/', async (req, res) => {
+router.post('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const user = await User.create(req.body);
     res.json(user);
@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
 });
 
 // PUT to update a user by _id
-router.put('/:userId', async (req, res) => {
+router.put('/:userId', async (req: Request, res: Response): Promise<void> => {
   try {
     const user = await User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -55,7 +55,8 @@ router.put('/:userId', async (req, res) => {
     );
     
     if (!user) {
-      return res.status(404).json({ message: 'No user found with this id!' });
+      res.status(404).json({ message: 'No user found with this id!' });
+      return;
     }
     res.json(user);
   } catch (err) {
@@ -64,12 +65,13 @@ router.put('/:userId', async (req, res) => {
 });
 
 // DELETE to remove user by _id
-router.delete('/:userId', async (req, res) => {
+router.delete('/:userId', async (req: Request, res: Response): Promise<void> => {
   try {
     const user = await User.findOneAndDelete({ _id: req.params.userId });
     
     if (!user) {
-      return res.status(404).json({ message: 'No user found with this id!' });
+      res.status(404).json({ message: 'No user found with this id!' });
+      return;
     }
 
     // BONUS: Remove associated thoughts
@@ -82,7 +84,7 @@ router.delete('/:userId', async (req, res) => {
 });
 
 // POST to add a new friend to a user's friend list
-router.post('/:userId/friends/:friendId', async (req, res) => {
+router.post('/:userId/friends/:friendId', async (req: Request, res: Response): Promise<void> => {
   try {
     const user = await User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -91,7 +93,8 @@ router.post('/:userId/friends/:friendId', async (req, res) => {
     );
     
     if (!user) {
-      return res.status(404).json({ message: 'No user found with this id!' });
+      res.status(404).json({ message: 'No user found with this id!' });
+      return;
     }
     res.json(user);
   } catch (err) {
@@ -100,7 +103,7 @@ router.post('/:userId/friends/:friendId', async (req, res) => {
 });
 
 // DELETE to remove a friend from a user's friend list
-router.delete('/:userId/friends/:friendId', async (req, res) => {
+router.delete('/:userId/friends/:friendId', async (req: Request, res: Response): Promise<void> => {
   try {
     const user = await User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -109,7 +112,8 @@ router.delete('/:userId/friends/:friendId', async (req, res) => {
     );
     
     if (!user) {
-      return res.status(404).json({ message: 'No user found with this id!' });
+      res.status(404).json({ message: 'No user found with this id!' });
+      return;
     }
     res.json(user);
   } catch (err) {
